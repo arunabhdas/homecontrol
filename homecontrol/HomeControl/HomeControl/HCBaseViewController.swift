@@ -62,7 +62,7 @@ class HCBaseViewController: UIViewController, UITableViewDataSource, UITableView
         */
     }
     func initializeStaticViews() {
-        title = "My Home"
+        title = Constants.Labels.kApplicationName
         /*
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Left", style: .Plain, target: self, action: "presentLeftMenuViewController")
         */
