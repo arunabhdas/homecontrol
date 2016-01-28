@@ -25,8 +25,9 @@
 		DC3E15311C5A54F60076E331 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E152C1C5A54F60076E331 /* Enum.swift */; };
 		DC3E15331C5A54F60076E331 /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = DC3E152F1C5A54F60076E331 /* FontAwesome.otf */; };
 		DC3E15341C5A54F60076E331 /* FontAwesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E15301C5A54F60076E331 /* FontAwesome.swift */; };
-		DC4A75A61C5A76860033B9D6 /* HCCDiscoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A75A51C5A76860033B9D6 /* HCCDiscoveryViewController.swift */; };
+		DC4A75A61C5A76860033B9D6 /* XMCDiscoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A75A51C5A76860033B9D6 /* XMCDiscoveryViewController.swift */; };
 		DC4A75A81C5A76D10033B9D6 /* XMCAccessoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A75A71C5A76D10033B9D6 /* XMCAccessoryViewController.swift */; };
+		DC4A75AA1C5A84C20033B9D6 /* HCDiscoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A75A91C5A84C20033B9D6 /* HCDiscoveryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,8 +74,9 @@
 		DC3E152E1C5A54F60076E331 /* FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontAwesome.h; sourceTree = "<group>"; };
 		DC3E152F1C5A54F60076E331 /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
 		DC3E15301C5A54F60076E331 /* FontAwesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAwesome.swift; sourceTree = "<group>"; };
-		DC4A75A51C5A76860033B9D6 /* HCCDiscoveryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCCDiscoveryViewController.swift; sourceTree = "<group>"; };
+		DC4A75A51C5A76860033B9D6 /* XMCDiscoveryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMCDiscoveryViewController.swift; sourceTree = "<group>"; };
 		DC4A75A71C5A76D10033B9D6 /* XMCAccessoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMCAccessoryViewController.swift; sourceTree = "<group>"; };
+		DC4A75A91C5A84C20033B9D6 /* HCDiscoveryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCDiscoveryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +133,8 @@
 				DC3E14E91C59BD160076E331 /* AppDelegate.swift */,
 				DC3E14EB1C59BD160076E331 /* ViewController.swift */,
 				DC3E151A1C5A41350076E331 /* HCBaseViewController.swift */,
-				DC4A75A51C5A76860033B9D6 /* HCCDiscoveryViewController.swift */,
+				DC4A75A91C5A84C20033B9D6 /* HCDiscoveryViewController.swift */,
+				DC4A75A51C5A76860033B9D6 /* XMCDiscoveryViewController.swift */,
 				DC4A75A71C5A76D10033B9D6 /* XMCAccessoryViewController.swift */,
 				DC3E15241C5A4E970076E331 /* DetailViewController.swift */,
 				DC3E14ED1C59BD160076E331 /* Main.storyboard */,
@@ -334,7 +337,8 @@
 			files = (
 				DC3E15341C5A54F60076E331 /* FontAwesome.swift in Sources */,
 				DC3E152A1C5A4F510076E331 /* ItemCell.swift in Sources */,
-				DC4A75A61C5A76860033B9D6 /* HCCDiscoveryViewController.swift in Sources */,
+				DC4A75A61C5A76860033B9D6 /* XMCDiscoveryViewController.swift in Sources */,
+				DC4A75AA1C5A84C20033B9D6 /* HCDiscoveryViewController.swift in Sources */,
 				DC3E151B1C5A41350076E331 /* HCBaseViewController.swift in Sources */,
 				DC4A75A81C5A76D10033B9D6 /* XMCAccessoryViewController.swift in Sources */,
 				DC3E151F1C5A45E90076E331 /* ProductItemCell.swift in Sources */,

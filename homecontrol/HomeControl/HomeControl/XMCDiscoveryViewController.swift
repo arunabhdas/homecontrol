@@ -6,7 +6,7 @@
 import UIKit
 import HomeKit
 
-class HCDiscoveryViewController: UITableViewController, HMAccessoryBrowserDelegate {
+class XMCDiscoveryViewController: UITableViewController, HMAccessoryBrowserDelegate {
 
     let homeManager = HMHomeManager()
     let browser = HMAccessoryBrowser()
@@ -30,7 +30,9 @@ class HCDiscoveryViewController: UITableViewController, HMAccessoryBrowserDelega
     
     func stopSearching() {
         title = "Discovered"
+        print ("Count : \(accessories.count)")
         browser.stopSearchingForNewAccessories()
+        
     }
     
     // MARK: - Table

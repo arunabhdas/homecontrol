@@ -5,11 +5,24 @@
 //
 
 import UIKit
-
-class HCBaseViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+import HomeKit
+class HCBaseViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, HMHomeManagerDelegate {
     var tableView: UITableView!
     var products = [Product]()
     var detailViewController: DetailViewController?
+    
+    let homeManager = HMHomeManager()
+    var activeHome: HMHome?
+    var activeRoom: HMRoom?
+    
+    var lastSelectedIndexRow = 0
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        homeManager.delegate = self
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.barTintColor = Constants.Colors.colorBlue
@@ -44,22 +57,33 @@ class HCBaseViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         tableView.showsVerticalScrollIndicator = false
         self.view.addSubview(tableView)
-        doReload()
         
         // Do any additional setup after loading the view.
     }
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        doReload()
+    }
     func doReload() {
+        /*
         let product1: Product = Product(productNumber: 1, name: "Genesis Light Bulb", desc: "Genesis Light Bulb")
         products.append(product1)
         let product2: Product = Product(productNumber: 2, name: "Genesis Fridge", desc: "Genesis Fridge")
         products.append(product2)
-        
+        */
         self.tableView.reloadData()
         /*
         dispatch_async(dispatch_get_main_queue(),{
             self.tableView.reloadData()
         });
         */
+    }
+    
+    func updateControllerWithHome(home: HMHome) {
+        if let room = home.rooms.first as HMRoom? {
+            activeRoom = room
+            title = room.name + " Devices"
+        }
     }
     func initializeStaticViews() {
         title = Constants.Labels.kApplicationName
@@ -79,11 +103,14 @@ class HCBaseViewController: UIViewController, UITableViewDataSource, UITableView
         let rightImage = UIImage.fontAwesomeIconWithName(.Sliders, textColor: UIColor.whiteColor(), size: CGSizeMake(30, 30))
         let rightImageOriginal = rightImage.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: rightImageOriginal, style: .Plain, target: self, action: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: rightImageOriginal, style: .Plain, target: self, action: "showDiscovery")
         
         navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.whiteColor(), NSFontAttributeName: UIFont(name: Constants.FontProperties.kFontName, size: Constants.FontProperties.kFontSize)!], forState: UIControlState.Normal)
     }
-    
+   
+    func showDiscovery() {
+        self.performSegueWithIdentifier("showDiscovery", sender: self)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -113,10 +140,12 @@ class HCBaseViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        // return self.imageTexts.count
         
-        print("Number included \(products.count)")
-        return self.products.count
+        if let accessories = activeRoom?.accessories {
+            print("Number included \(accessories.count)")
+            return accessories.count
+        }
+        return 0
         
     }
     
@@ -126,9 +155,14 @@ class HCBaseViewController: UIViewController, UITableViewDataSource, UITableView
         let cellIdentifier: String = "ProductItemCell"
         let cell: ProductItemCell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ProductItemCell
         cell.backgroundColor = UIColor.clearColor()
-       cell.thumbnailImageView.image = UIImage.fontAwesomeIconWithName(.CircleThin, textColor: UIColor.whiteColor(), size: CGSizeMake(50, 50))
-        cell.titleLabel.text = self.products[indexPath.row].name
-        print("Name : \(self.products[indexPath.row].name) --")
+        cell.thumbnailImageView.image = UIImage.fontAwesomeIconWithName(.CircleThin, textColor: UIColor.whiteColor(), size: CGSizeMake(50, 50))
+        
+        let accessory = activeRoom!.accessories[indexPath.row] as HMAccessory
+        cell.titleLabel.text = accessory.name
+        
+        // ignore the information service
+        cell.descriptionLabel.text = "\(accessory.services.count - 1) service(s)"
+        
         /*
         let thumbnailFile = self.products[indexPath.row].smallImageFile
         if (thumbnailFile != nil) {
@@ -164,5 +198,62 @@ class HCBaseViewController: UIViewController, UITableViewDataSource, UITableView
         self.navigationController?.pushViewController(detailViewController!, animated: true)
         
     }
+    
+    // MARK: - Home Delegate
+    
+    // Homes are not loaded right away. Monitor the delegate so we catch the loaded signal.
+    func homeManager(manager: HMHomeManager, didAddHome home: HMHome) {
+        
+    }
+    
+    func homeManager(manager: HMHomeManager, didRemoveHome home: HMHome) {
+        
+    }
+    
+    func homeManagerDidUpdateHomes(manager: HMHomeManager) {
+        if let home = homeManager.primaryHome {
+            activeHome = home
+            updateControllerWithHome(home)
+        } else {
+            initialHomeSetup()
+        }
+        doReload()
+    }
+    // MARK: - Setup
+    
+    // Create our primary home if it doens't exist yet
+    private func initialHomeSetup() {
+        homeManager.addHomeWithName("7 Light Avenue", completionHandler: { (home, error) in
+            if error != nil {
+                print("Something went wrong when attempting to create our home. \(error?.localizedDescription)")
+            } else {
+                if let discoveredHome = home {
+                    // Add a new room to our home
+                    discoveredHome.addRoomWithName("Home", completionHandler: { (room, error) in
+                        if error != nil {
+                            print("Something went wrong when attempting to create our room. \(error?.localizedDescription)")
+                        } else {
+                            self.updateControllerWithHome(discoveredHome)
+                        }
+                    })
+                    
+                    // Assign this home as our primary home
+                    self.homeManager.updatePrimaryHome(discoveredHome, completionHandler: { (error) in
+                        if error != nil {
+                            print("Something went wrong when attempting to make this home our primary home. \(error?.localizedDescription)")
+                        }
+                    })
+                } else {
+                    print("Something went wrong when attempting to create our home")
+                }
+                
+            }
+        })
+    }
+    
+    func homeManagerDidUpdatePrimaryHome(manager: HMHomeManager) {
+        
+    }
+    
 
 }
