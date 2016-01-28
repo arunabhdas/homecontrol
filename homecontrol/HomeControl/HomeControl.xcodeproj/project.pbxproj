@@ -15,6 +15,16 @@
 		DC3E14FF1C59BD160076E331 /* HomeControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E14FE1C59BD160076E331 /* HomeControlTests.swift */; };
 		DC3E150A1C59BD160076E331 /* HomeControlUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E15091C59BD160076E331 /* HomeControlUITests.swift */; };
 		DC3E15181C59C46A0076E331 /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC3E15171C59C46A0076E331 /* HomeKit.framework */; };
+		DC3E151B1C5A41350076E331 /* DASBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E151A1C5A41350076E331 /* DASBaseViewController.swift */; };
+		DC3E151D1C5A42410076E331 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E151C1C5A42410076E331 /* Product.swift */; };
+		DC3E151F1C5A45E90076E331 /* ProductItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E151E1C5A45E90076E331 /* ProductItemCell.swift */; };
+		DC3E15231C5A4D580076E331 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E15221C5A4D580076E331 /* Constants.swift */; };
+		DC3E15251C5A4E970076E331 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E15241C5A4E970076E331 /* DetailViewController.swift */; };
+		DC3E152A1C5A4F510076E331 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E15281C5A4F510076E331 /* ItemCell.swift */; };
+		DC3E152B1C5A4F510076E331 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC3E15291C5A4F510076E331 /* ItemCell.xib */; };
+		DC3E15311C5A54F60076E331 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E152C1C5A54F60076E331 /* Enum.swift */; };
+		DC3E15331C5A54F60076E331 /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = DC3E152F1C5A54F60076E331 /* FontAwesome.otf */; };
+		DC3E15341C5A54F60076E331 /* FontAwesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E15301C5A54F60076E331 /* FontAwesome.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +60,17 @@
 		DC3E150B1C59BD160076E331 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC3E15171C59C46A0076E331 /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
 		DC3E15191C59C46A0076E331 /* HomeControl.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HomeControl.entitlements; sourceTree = "<group>"; };
+		DC3E151A1C5A41350076E331 /* DASBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DASBaseViewController.swift; sourceTree = "<group>"; };
+		DC3E151C1C5A42410076E331 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		DC3E151E1C5A45E90076E331 /* ProductItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductItemCell.swift; sourceTree = "<group>"; };
+		DC3E15221C5A4D580076E331 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DC3E15241C5A4E970076E331 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		DC3E15281C5A4F510076E331 /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		DC3E15291C5A4F510076E331 /* ItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
+		DC3E152C1C5A54F60076E331 /* Enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
+		DC3E152E1C5A54F60076E331 /* FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontAwesome.h; sourceTree = "<group>"; };
+		DC3E152F1C5A54F60076E331 /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
+		DC3E15301C5A54F60076E331 /* FontAwesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAwesome.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,10 +126,14 @@
 				DC3E15191C59C46A0076E331 /* HomeControl.entitlements */,
 				DC3E14E91C59BD160076E331 /* AppDelegate.swift */,
 				DC3E14EB1C59BD160076E331 /* ViewController.swift */,
+				DC3E151A1C5A41350076E331 /* DASBaseViewController.swift */,
+				DC3E15241C5A4E970076E331 /* DetailViewController.swift */,
 				DC3E14ED1C59BD160076E331 /* Main.storyboard */,
 				DC3E14F01C59BD160076E331 /* Assets.xcassets */,
 				DC3E14F21C59BD160076E331 /* LaunchScreen.storyboard */,
 				DC3E14F51C59BD160076E331 /* Info.plist */,
+				DC3E15211C5A4D270076E331 /* Views */,
+				DC3E15201C5A45F70076E331 /* Models */,
 			);
 			path = HomeControl;
 			sourceTree = "<group>";
@@ -129,6 +154,37 @@
 				DC3E150B1C59BD160076E331 /* Info.plist */,
 			);
 			path = HomeControlUITests;
+			sourceTree = "<group>";
+		};
+		DC3E15201C5A45F70076E331 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DC3E15221C5A4D580076E331 /* Constants.swift */,
+				DC3E151C1C5A42410076E331 /* Product.swift */,
+				DC3E15351C5A54FC0076E331 /* FontAwesome */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		DC3E15211C5A4D270076E331 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DC3E15281C5A4F510076E331 /* ItemCell.swift */,
+				DC3E15291C5A4F510076E331 /* ItemCell.xib */,
+				DC3E151E1C5A45E90076E331 /* ProductItemCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		DC3E15351C5A54FC0076E331 /* FontAwesome */ = {
+			isa = PBXGroup;
+			children = (
+				DC3E152C1C5A54F60076E331 /* Enum.swift */,
+				DC3E152E1C5A54F60076E331 /* FontAwesome.h */,
+				DC3E152F1C5A54F60076E331 /* FontAwesome.otf */,
+				DC3E15301C5A54F60076E331 /* FontAwesome.swift */,
+			);
+			name = FontAwesome;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +297,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC3E152B1C5A4F510076E331 /* ItemCell.xib in Resources */,
+				DC3E15331C5A54F60076E331 /* FontAwesome.otf in Resources */,
 				DC3E14F41C59BD160076E331 /* LaunchScreen.storyboard in Resources */,
 				DC3E14F11C59BD160076E331 /* Assets.xcassets in Resources */,
 				DC3E14EF1C59BD160076E331 /* Main.storyboard in Resources */,
@@ -268,8 +326,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC3E15341C5A54F60076E331 /* FontAwesome.swift in Sources */,
+				DC3E152A1C5A4F510076E331 /* ItemCell.swift in Sources */,
+				DC3E151B1C5A41350076E331 /* DASBaseViewController.swift in Sources */,
+				DC3E151F1C5A45E90076E331 /* ProductItemCell.swift in Sources */,
+				DC3E151D1C5A42410076E331 /* Product.swift in Sources */,
 				DC3E14EC1C59BD160076E331 /* ViewController.swift in Sources */,
+				DC3E15311C5A54F60076E331 /* Enum.swift in Sources */,
 				DC3E14EA1C59BD160076E331 /* AppDelegate.swift in Sources */,
+				DC3E15231C5A4D580076E331 /* Constants.swift in Sources */,
+				DC3E15251C5A4E970076E331 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

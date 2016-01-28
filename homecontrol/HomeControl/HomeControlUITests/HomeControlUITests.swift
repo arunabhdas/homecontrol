@@ -2,7 +2,6 @@
 //  HomeControlUITests.swift
 //  HomeControlUITests
 //
-//  Copyright © 2016 Arunabh Das. All rights reserved.
 //
 
 import XCTest
