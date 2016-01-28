@@ -65,18 +65,15 @@ class HCBaseViewController: UIViewController, UITableViewDataSource, UITableView
         doReload()
     }
     func doReload() {
-        /*
         let product1: Product = Product(productNumber: 1, name: "Genesis Light Bulb", desc: "Genesis Light Bulb")
         products.append(product1)
         let product2: Product = Product(productNumber: 2, name: "Genesis Fridge", desc: "Genesis Fridge")
         products.append(product2)
-        */
+       
+        let acc1: HMAccessory = HMAccessory()
+        acc1.setValue("Dummmy Light Bulb", forKey: "name")
+        
         self.tableView.reloadData()
-        /*
-        dispatch_async(dispatch_get_main_queue(),{
-            self.tableView.reloadData()
-        });
-        */
     }
     
     func updateControllerWithHome(home: HMHome) {
@@ -148,8 +145,19 @@ class HCBaseViewController: UIViewController, UITableViewDataSource, UITableView
         return 0
         
     }
+  
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        if let accessories = activeRoom?.accessories {
+            if (accessories.count == 0) {
+                return "No devices found";
+            }
+            
+        }
+        return "Devices"
+    }
     
-    
+
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         print("cellForRowAtIndexPath was called")
         let cellIdentifier: String = "ProductItemCell"

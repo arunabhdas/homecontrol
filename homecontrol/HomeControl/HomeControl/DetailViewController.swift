@@ -37,19 +37,18 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIGestureReco
         
         // 2
         let secondRowImageView = UIImageView()
-        secondRowImageView.heightAnchor.constraintEqualToConstant(360.0).active = true
-        secondRowImageView.widthAnchor.constraintEqualToConstant(360.0).active = true
+        secondRowImageView.heightAnchor.constraintEqualToConstant(50.0).active = true
+        secondRowImageView.widthAnchor.constraintEqualToConstant(50.0).active = true
         secondRowImageView.clipsToBounds = true
         secondRowImageView.contentMode = UIViewContentMode.ScaleAspectFit
-        let placeholder = UIImage(named: "logo")
-        secondRowImageView.image = placeholder
+        secondRowImageView.image = UIImage.fontAwesomeIconWithName(.CircleThin, textColor: UIColor.whiteColor(), size: CGSizeMake(50, 50))
         secondRowImageView.translatesAutoresizingMaskIntoConstraints = false
         if (self.currentMainImage != nil) {
             print("currentMainImage not nil")
             secondRowImageView.image = self.currentMainImage
         } else {
             print("currentMainImage nil")
-            secondRowImageView.image = placeholder
+            secondRowImageView.image = UIImage.fontAwesomeIconWithName(.CircleThin, textColor: UIColor.whiteColor(), size: CGSizeMake(50, 50))
         }
         let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("imageTapped:"))
         secondRowImageView.userInteractionEnabled = true
