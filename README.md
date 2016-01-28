@@ -1,7 +1,7 @@
 homecontrol
 ==========
 
-HomeControl is a project for demonstrating control of home appliances
+HomeControl is an app for controlling of home appliances using HomeKit
 
 Screenshots
 -----------
