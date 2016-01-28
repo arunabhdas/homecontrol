@@ -41,6 +41,7 @@ struct Constants {
     }
     struct Labels {
         static let kApplicationName = "HomeControl"
+        static let kOnOff = "On / Off"
     }
     struct Entities {
         static let kProductClass = "Product"

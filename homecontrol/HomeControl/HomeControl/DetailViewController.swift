@@ -78,7 +78,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIGestureReco
         doneButton = UIButton()
         doneButton.widthAnchor.constraintEqualToConstant(300.0).active = true
         doneButton.heightAnchor.constraintEqualToConstant(37.5).active = true
-        doneButton.setTitle("Buy", forState: .Normal)
+        doneButton.setTitle(Constants.Labels.kOnOff, forState: .Normal)
         doneButton.backgroundColor = Constants.Colors.colorBlue
         doneButton.layer.shadowOpacity = 0.55
         doneButton.layer.shadowRadius = 5.0

@@ -148,7 +148,7 @@ class HCBaseViewController: UIViewController, UITableViewDataSource, UITableView
     //MARK: UITableViewDelegate
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        // detailViewController = storyboard.instantiateViewControllerWithIdentifier("detail") as? DetailViewController
+        detailViewController = storyboard.instantiateViewControllerWithIdentifier("detail") as? DetailViewController
        /*
         self.currentName = self.products[indexPath.row].name
         self.currentProductObjectId = self.products[indexPath.row].objectId
@@ -161,7 +161,7 @@ class HCBaseViewController: UIViewController, UITableViewDataSource, UITableView
             print("currentProductObjectId\(currentProductObjectId)")
         }
         */
-        // self.navigationController?.pushViewController(detailViewController!, animated: true)
+        self.navigationController?.pushViewController(detailViewController!, animated: true)
         
     }
 
