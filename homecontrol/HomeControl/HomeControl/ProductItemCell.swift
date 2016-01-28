@@ -28,8 +28,8 @@ class ProductItemCell : UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        thumbnailImageView.frame = CGRectMake(10, 10, 60, 60)
-        titleLabel.frame = CGRectMake(120, 0, self.frame.width - 50, 60)
+        thumbnailImageView.frame = CGRectMake(10, 10, 40, 40)
+        titleLabel.frame = CGRectMake(60, 0, self.frame.width - 10, 60)
         titleLabel.textColor = UIColor.whiteColor()
         // descriptionLabel.frame = CGRectMake(200, 10, self.frame.width - 20, 25)
         // descriptionLabel.textColor = UIColor.blackColor()

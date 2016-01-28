@@ -6,7 +6,7 @@
 
 import UIKit
 
-class DASBaseViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class HCBaseViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var tableView: UITableView!
     var products = [Product]()
     var detailViewController: DetailViewController?
@@ -14,6 +14,13 @@ class DASBaseViewController: UIViewController, UITableViewDataSource, UITableVie
         super.viewDidLoad()
         self.navigationController?.navigationBar.barTintColor = Constants.Colors.colorBlue
         self.navigationController?.navigationBar.translucent = false
+        if let navFont = UIFont(name: Constants.FontProperties.kFontName, size: Constants.FontProperties.kFontSize) {
+            let titleDict: NSDictionary = [
+                NSForegroundColorAttributeName: UIColor.whiteColor(),
+                NSFontAttributeName: navFont
+            ]
+            self.navigationController?.navigationBar.titleTextAttributes = titleDict as! [String : AnyObject]
+        }
         view.backgroundColor = Constants.Colors.colorLightBlue
         
         initializeStaticViews()
@@ -42,9 +49,9 @@ class DASBaseViewController: UIViewController, UITableViewDataSource, UITableVie
         // Do any additional setup after loading the view.
     }
     func doReload() {
-        let product1: Product = Product(productNumber: 1, name: "First Product", desc: "First Product")
+        let product1: Product = Product(productNumber: 1, name: "Genesis Light Bulb", desc: "Genesis Light Bulb")
         products.append(product1)
-        let product2: Product = Product(productNumber: 2, name: "Second Product", desc: "Second Product")
+        let product2: Product = Product(productNumber: 2, name: "Genesis Fridge", desc: "Genesis Fridge")
         products.append(product2)
         
         self.tableView.reloadData()

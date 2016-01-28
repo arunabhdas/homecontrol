@@ -15,7 +15,7 @@
 		DC3E14FF1C59BD160076E331 /* HomeControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E14FE1C59BD160076E331 /* HomeControlTests.swift */; };
 		DC3E150A1C59BD160076E331 /* HomeControlUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E15091C59BD160076E331 /* HomeControlUITests.swift */; };
 		DC3E15181C59C46A0076E331 /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC3E15171C59C46A0076E331 /* HomeKit.framework */; };
-		DC3E151B1C5A41350076E331 /* DASBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E151A1C5A41350076E331 /* DASBaseViewController.swift */; };
+		DC3E151B1C5A41350076E331 /* HCBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E151A1C5A41350076E331 /* HCBaseViewController.swift */; };
 		DC3E151D1C5A42410076E331 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E151C1C5A42410076E331 /* Product.swift */; };
 		DC3E151F1C5A45E90076E331 /* ProductItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E151E1C5A45E90076E331 /* ProductItemCell.swift */; };
 		DC3E15231C5A4D580076E331 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E15221C5A4D580076E331 /* Constants.swift */; };
@@ -60,7 +60,7 @@
 		DC3E150B1C59BD160076E331 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC3E15171C59C46A0076E331 /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
 		DC3E15191C59C46A0076E331 /* HomeControl.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HomeControl.entitlements; sourceTree = "<group>"; };
-		DC3E151A1C5A41350076E331 /* DASBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DASBaseViewController.swift; sourceTree = "<group>"; };
+		DC3E151A1C5A41350076E331 /* HCBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCBaseViewController.swift; sourceTree = "<group>"; };
 		DC3E151C1C5A42410076E331 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		DC3E151E1C5A45E90076E331 /* ProductItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductItemCell.swift; sourceTree = "<group>"; };
 		DC3E15221C5A4D580076E331 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -126,7 +126,7 @@
 				DC3E15191C59C46A0076E331 /* HomeControl.entitlements */,
 				DC3E14E91C59BD160076E331 /* AppDelegate.swift */,
 				DC3E14EB1C59BD160076E331 /* ViewController.swift */,
-				DC3E151A1C5A41350076E331 /* DASBaseViewController.swift */,
+				DC3E151A1C5A41350076E331 /* HCBaseViewController.swift */,
 				DC3E15241C5A4E970076E331 /* DetailViewController.swift */,
 				DC3E14ED1C59BD160076E331 /* Main.storyboard */,
 				DC3E14F01C59BD160076E331 /* Assets.xcassets */,
@@ -328,7 +328,7 @@
 			files = (
 				DC3E15341C5A54F60076E331 /* FontAwesome.swift in Sources */,
 				DC3E152A1C5A4F510076E331 /* ItemCell.swift in Sources */,
-				DC3E151B1C5A41350076E331 /* DASBaseViewController.swift in Sources */,
+				DC3E151B1C5A41350076E331 /* HCBaseViewController.swift in Sources */,
 				DC3E151F1C5A45E90076E331 /* ProductItemCell.swift in Sources */,
 				DC3E151D1C5A42410076E331 /* Product.swift in Sources */,
 				DC3E14EC1C59BD160076E331 /* ViewController.swift in Sources */,
@@ -570,6 +570,7 @@
 				DC3E15101C59BD160076E331 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DC3E15111C59BD160076E331 /* Build configuration list for PBXNativeTarget "HomeControlTests" */ = {
 			isa = XCConfigurationList;
@@ -578,6 +579,7 @@
 				DC3E15131C59BD160076E331 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DC3E15141C59BD160076E331 /* Build configuration list for PBXNativeTarget "HomeControlUITests" */ = {
 			isa = XCConfigurationList;
@@ -586,6 +588,7 @@
 				DC3E15161C59BD160076E331 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
